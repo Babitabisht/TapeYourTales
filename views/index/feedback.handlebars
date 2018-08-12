@@ -1,0 +1,53 @@
+<h2 class="mainH">
+    Your feedback is important to us.
+</h2>
+
+<p class="content"> Please tell us which type of improvement you wish to have in our product. We really appreciate your effort and your efforts means a lot for us
+
+</p>
+
+<div class="center">
+
+<!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn-large modal-trigger " href="#modal1">Feedback</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Please provide your feedback</h4>
+    
+    <div>
+<form action="/feedback" method="POST">
+
+
+     <div class="input-field">
+            <input type="text" name="name" id=""  required>
+            <label for="name">Your Name</label>
+        </div>
+
+        <div class="input-field">
+        
+        <textarea class="materialize-textarea" name="comment"   required></textarea>
+        <label for="comment">Comment</label>
+
+        </div>
+<input type="submit"  class="btn green waves-effect waves-green"  id="sub" value="Submit">
+
+
+</form>
+       
+    </div>
+    </div>
+    <div class="modal-footer">
+    <div class="progress">
+    <div id="acti" ></div>
+    </div>
+    
+
+</div>  
+    
+    </div>
+  </div>
+
+</div>
+ 

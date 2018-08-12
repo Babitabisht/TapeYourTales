@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+  .nav-wrapper .fa-bar{
+      font-size: 25px;
+  }
+
+  footer{
+      margin-top: 20px;
+  }
+
+  .story-text{
+      height:160px;
+  }
+
+  .dash-status{
+      text-transform:Capitalize;
+  }
+
+  #delete-form{
+      display: inline;
+  }
+
+  .content{
+
+    font-family: 'Dancing Script', cursive;
+    font-size:25px;
+  }
+
+  .navEnd{
+
+    border-bottom: #008ed6 3px solid;
+    opacity: 0.8;
+  }
+
+  .boddy{
+   
+        background: url('/img/girl.jpeg') no-repeat center  center  fixed;
+        background-size: cover;
+        background-color: aqua;
+        opacity: 0.9;
+       
+        
+  }
+
+  .bodyD{
+
+    background: url('/img/wys.jpg') no-repeat center  center  fixed;
+        background-size: cover;
+        background-color: aqua;
+       
+       
+  }
+
+  .mainH{
+
+    font-family: 'Lobster', cursive;
+    font-weight: 100px;
+  }
+
+  i.icon-blue {
+    color: #00b8d4 ;
+}
+i.icon-read{
+    color:#0097a7;
+}
+
+i.icon-write{
+    color:#558b2f;
+}
+
+
+.cardP{
+
+  
+    border:1px solid #8bc34a;
+    margin-top: 20px;
+    padding: 10px;
+   
+}
+.cardPa{
+
+  
+    border:1px solid #ef5350;
+    margin-top: 20px;
+    padding: 10px;
+   
+}

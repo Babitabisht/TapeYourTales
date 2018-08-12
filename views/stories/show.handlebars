@@ -1,0 +1,86 @@
+<div class="row">
+
+<div class="col s12 m8">
+<div class="card">
+<h3> {{story.title}} 
+{{{editIcon story.user.id  user.id  story.id false}}}
+
+</h3>
+<div class="card-body">
+<div class="card-content">
+<span class="card-title"> {{formatDate story.date 'MMMM Do YYYY'}} </span>
+{{{story.body}}}
+
+</div>
+
+</div>
+
+{{#if story.allowComments}}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Comment</span>
+        {{#if user}}
+       
+        <form action="/stories/comment/{{story.id}}"  method="post">
+        <div class="input-field">
+            <textarea name="commentBody"
+            class="materialize-textarea" ></textarea>
+        <label for="addcomment">Add Comment</label>
+        <input type="submit" value="Submit" class="btn waves-effect">
+
+        </div>
+        
+        </form>
+
+
+
+        {{else}}
+<p>PLease  <a href="/auth/google">login</a>  to leave a comment</p>
+
+        {{/if}}
+    </div>
+</div>
+
+{{#each story.comments}}
+<div class="card">
+<div class="card-content">
+    <h5></h5>
+    
+<p><i>{{commentBody}}</i></p>
+
+<div class="chip">
+    <img src="{{commentUser.image}}" >
+  <a href="/stories/user/{{commentUser.id}}"> {{commentUser.firstName}}  {{commentUser.lastName}} </a>  
+  </div>
+  <hr>
+  <small > Posted :{{formatDate commentDate 'MMMM  Do YYYY'}} </small>
+
+</div>
+
+
+</div>
+{{/each}}
+{{/if}}
+
+</div>
+</div>
+
+<div class="col s12 m4">
+<div class="card center-align">
+
+    <div class="card-content">
+        <span class="card-title"> {{story.user.firstName}}  {{story.user.lastName}} </span>
+
+        <img src=" {{story.user.image}}" alt="" class="circle responsive-img">
+
+    </div>
+    <div class="card-action">
+
+<a href="/stories/user/{{story.user.id}}" > Read More from {{story.user.firstName}} </a>
+
+    </div>
+</div>
+
+</div>
+
+</div>

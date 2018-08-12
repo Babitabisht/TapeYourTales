@@ -1,0 +1,57 @@
+<h2 class="mainH">Add Story</h2>
+
+
+<div class="row">
+
+    <form action="/stories/" class="col s12"   id="formAdd" method="POST">
+
+        <div class="row">
+
+            <div class="input-field">
+                <input type="text" name="title" id=""   required>
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="input-field">
+                <select name="status" id="">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="unpublished">UnPublished</option>
+
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+    <div class="row">
+
+        <p>
+      <label>
+        <input type="checkbox"   name="allowComments" id="filled-in-box"   class="filled-in" checked="checked" />
+        <span>Allow Comments</span>
+      </label>
+    </p>
+
+      
+    </div>
+ <div class="row">
+
+            <div class="input-field">
+             <h5 class="content">Tell us about your Story</h5> 
+                <textarea  name="body" id=""    required ></textarea>
+                
+            </div>
+        </div>
+
+    <input type="submit" value="save"  class="btn"> <br>  <br>
+    </form>
+<br> <br>
+<div class="progress">
+    <div id="actiAdd" ></div>
+    </div>
+    
+
+</div>
+</div>

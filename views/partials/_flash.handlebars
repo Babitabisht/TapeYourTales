@@ -1,0 +1,30 @@
+
+<div class="row center">
+
+<div class="col s12 center" >
+{{#if success_msg}}
+
+    <div class="cardP  #c5e1a5 light-green lighten-3">
+    {{!-- <span class="green-text text-darken-2"></span> --}}
+
+    <p class="green-text text-darken-2   ">   <strong> {{success_msg}}   </strong>   </p>
+  </div>
+
+{{/if}}
+
+
+</div>
+
+
+{{#if error_msg}}
+
+ <div class="cardPa  #ff8a80 red accent-1">
+    {{!-- <span class="green-text text-darken-2"></span> --}}
+
+    <h5 class="red-text text-darken-2   ">   {{error_msg}}     </h5>
+  </div>
+
+{{/if}}
+
+
+</div>

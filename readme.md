@@ -1,0 +1,1 @@
+An app that publish Your tales at public platform, using google oauth 2.0 authentification
