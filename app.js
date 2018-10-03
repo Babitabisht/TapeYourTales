@@ -28,8 +28,12 @@ require('./models/Story');
 //feedback model
 require('./models/Feedback');
 
+//local strategy model
+require('./models/CUser');
+
 //passport config
 require('./config/passport')(passport);
+require('./config/Cpassport')(passport);
 
 
 
