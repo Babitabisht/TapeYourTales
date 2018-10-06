@@ -7,6 +7,10 @@ const Feedback=mongoose.model('feedback');
 const bcrypt=require('bcryptjs');
 //const passport=require('../config/Cpassport');
 const passport=require('passport');
+//const passport=require('./config/Cpassport')(passport);
+
+var localS = new passport.Passport();
+require("../config/Cpassport")(localS);
 
 require('../models/CUser');
 const CUsers=mongoose.model('CUsers');
@@ -17,8 +21,46 @@ router.get('/',ensureGuest,(req, res)=>{
 });
 
 
+//-------------------
+router.get('/login',(req,res)=>{
+    res.render('index/login')
+    
+    })
+    
+    //login form post
+    
+    router.post('/login',(req,res,next) => {
+        console.log('in post')
+        console.log( "user");
+       
+        localS.authenticate('local',{
+            successRedirect:'/dashboard',
+            failureRedirect:'/login',
+            failureFlash:true
+        })(req,res,next);
+    
+       // console.log("Authenticated by local strategy");
+    
+    });
+    
+    //logout
+    
+    // router.get('/logout',(req,res)=>{
+    //     req.logout();
+    //     req.flash('success_msg','You are logged out');
+    //     res.redirect('/users/login');
+    
+    // })
+    
+    
+    
+    //------------
+    
 
 router.get('/dashboard',ensureAuthenticated,(req,res)=>{
+    console.log("----------------------------------------------------------------");
+    console.log(req.user)
+    console.log(req.session)
 Story.find({user:req.user.id}).then( stories=>{
     res.render('index/dashboard',{
         stories:stories
@@ -28,38 +70,6 @@ Story.find({user:req.user.id}).then( stories=>{
   
 })
 
-
-//-------------------
-router.get('/login',(req,res)=>{
-res.render('index/login')
-
-})
-
-//login form post
-
-router.post('/login',(req,res,next) => {
-    console.log('in post')
-    console.log( "user");
-    passport.authenticate('local',{
-        successRedirect:'/dashboard',
-        failureRedirect:'/login',
-        failureFlash:true
-    })(req,res,next);
-
-});
-
-//logout
-
-// router.get('/logout',(req,res)=>{
-//     req.logout();
-//     req.flash('success_msg','You are logged out');
-//     res.redirect('/users/login');
-
-// })
-
-
-
-//------------
 
 
 router.get('/register',(req,res)=>{

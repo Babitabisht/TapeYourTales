@@ -51,11 +51,12 @@ if(user){
 
 
 passport.serializeUser( (user,done)=>{
-
+    console.log("in serialize  of oauth.............")
     done(null,user.id);
 } );
 
 passport.deserializeUser( (id,done)=>{
+    console.log("in deserialize of oauth.....................")
     User.findById(id).then(user =>done(null,user));
     
 } );

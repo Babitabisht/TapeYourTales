@@ -22,24 +22,24 @@ router.get(
       subject: 'Welcome'+req.user.firstName,
       user: {  
         name: 'Belle',
-        message: 'Welcome to My first express-Mailer implementation'
+        message: 'Welcome to the App'
       }
     }
   
     
 
 
-    res.mailer.send("../views/mail", mailOptionss, function(err, message) {
-      if (err) {
-        console.log(err);
-        // res.send('There was an error sending the email'+err);
-        console.log("mail  not sent");
-        return;
-      } else {
-        console.log("mail sent...........");
-        return;
-      }
-    });
+    // res.mailer.send("../views/mail", mailOptionss, function(err, message) {
+    //   if (err) {
+    //     console.log(err);
+    //     // res.send('There was an error sending the email'+err);
+    //     console.log("mail  not sent");
+    //     return;
+    //   } else {
+    //     console.log("mail sent...........");
+    //     return;
+    //   }
+    // });
 
     req.flash("success_msg", "Welcome to TapeYourTales");
     res.redirect("/dashboard");
