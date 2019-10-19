@@ -33,13 +33,13 @@ Here is the live App
 
 ## Common setup
 
-Clone the repo and install the dependencies.
+Clone the repo .
 
 ```bash
 git clone https://github.com/Babitabisht/TapeYourTales.git
 cd TapeYourTales
 ```
-
+##  Install  all the packages. 
 ```bash
 npm install
 ```
